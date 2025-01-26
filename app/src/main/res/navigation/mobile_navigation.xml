@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_temperature_settings">
+
+    <fragment
+        android:id="@+id/navigation_temperature_settings"
+        android:name="com.example.smarthome.ui.temperatureSettings.TemperatureSettingsFragment"
+        android:label="@string/title_temp_settings"
+        tools:layout="@layout/fragment_device_manager" />
+
+    <fragment
+        android:id="@+id/navigation_add_device"
+        android:name="com.example.smarthome.ui.addDevice.AddDeviceFragment"
+        android:label="@string/title_add_device"
+        tools:layout="@layout/fragment_add_device" />
+
+    <fragment
+        android:id="@+id/navigation_device_manager"
+        android:name="com.example.smarthome.ui.deviceManager.DeviceManagerFragment"
+        android:label="@string/title_device_manager"
+        tools:layout="@layout/fragment_temperature_settings" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.smarthome.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_temperature_settings" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.smarthome.ui.notification.NotificationFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notification" />
+
+
+
+</navigation>

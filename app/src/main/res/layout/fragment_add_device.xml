@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purpleBackground"
+    tools:context=".ui.addDevice.AddDeviceFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewTemperatureSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_device"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_motion"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="140dp"
+        app:cardBackgroundColor="@color/color_circle_temp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTemperatureSettings">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon_card_view_motion"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/icon_motion_sensor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_motion_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95dp"
+                android:text="@string/zigbee"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_motion_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/motion_sensor"
+                android:textColor="@color/material_dynamic_neutral80"
+                android:textSize="12sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_motion" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_door"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="5dp"
+        app:cardBackgroundColor="@color/color_card_view_door"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toEndOf="@+id/card_view_motion"
+        app:layout_constraintTop_toTopOf="@+id/card_view_motion">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon_card_view_door"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/icon_door_sensor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_door_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95dp"
+                android:text="@string/zigbee"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_door_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/door_sensor"
+                android:textColor="@color/material_dynamic_neutral80"
+                android:textSize="12sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_door_upper" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_temp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="@color/color_card_view_temp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="@+id/card_view_motion"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_motion" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon_card_view_temp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/icon_temp_sensor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_temp_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="@string/zigbee"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_temp_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature_sensor"
+                android:textColor="@color/material_dynamic_neutral_variant90"
+                android:textSize="12sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_temp_upper" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_not_found_device"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        app:cardBackgroundColor="@color/purpleBackground"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="@+id/card_view_door"
+        app:layout_constraintTop_toTopOf="@+id/card_view_temp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon_card_view_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/icon_wifi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_not_found_main_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/not_found_device_upper"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_not_found" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_not_found_main_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/not_found_device_lower"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_not_found_main_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_not_found_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/select_manually"
+                android:textColor="@color/orange"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_not_found_main_lower" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddDevice"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/add_device"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_temp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

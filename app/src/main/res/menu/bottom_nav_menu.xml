@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_temperature_settings"
+        android:icon="@drawable/icon_temp_setting"
+        android:title=""  />
+
+    <item
+        android:id="@+id/navigation_add_device"
+        android:icon="@drawable/icon_add_device"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_device_manager"
+        android:icon="@drawable/icon_device_manager"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/icon_profile"
+        android:title="" />
+
+</menu>

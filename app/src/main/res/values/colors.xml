@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purpleBackground">#38085A</color>
+    <color name="startColor">#B74FF6</color>
+    <color name="endColor">#BFA4D3</color>
+    <color name="grey">#6C7278</color>
+    <color name="custom_button">#6A00BF</color>
+    <color name="custom_stroke_button">#1D61E7</color>
+    <color name="blue">#4D81E7</color>
+    <color name="green">#73FF44</color>
+    <color name="red">#FE364D</color>
+    <color name="blue_segment_button">#2C4457</color>
+    <color name="slider_start_color">#FE364D</color> <!--<color name="slider_start_color">#F64754</color> -->
+    <color name="slider_end_color">#585ED7</color>
+    <color name="transparent_black">#00000000</color>
+    <color name="color_circle_temp">#2C4457</color>
+    <color name="color_bottom_nav_icon_pressed">#BA59F6</color>
+    <color name="color_card_view_door">#282424</color>
+    <color name="color_card_view_temp">#5A5A5A</color>
+    <color name="color_text_stroke">#2C4457</color>
+    <color name="orange">#FFB267</color>
+    <color name="blue_card_view">#375DFB</color>
+    <color name="yellow">#FFC143</color>
+    <color name="profile_color">#381466</color>
+    <color name="blue_value">#59B4F7</color>
+    <color name="purple_card">#512097</color>
+    <color name="profile_color_2">#401975</color>
+
+
+</resources>

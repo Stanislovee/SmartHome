@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purpleBackground"
+    tools:context=".ui.notification.NotificationFragment">
+
+    <ImageButton
+        android:id="@+id/btnBackNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/icon_btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_static_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="10dp"
+
+        android:text="@string/notifications"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/btnBackNotifications"
+        app:layout_constraintTop_toTopOf="@+id/btnBackNotifications" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardViewNotificationMotion"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        app:cardBackgroundColor="@color/profile_color"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_view_card_notification_motion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/icon_card_notification_motion"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="60dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/activity_has"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_card_notification_motion"
+                app:layout_constraintStart_toEndOf="@+id/image_view_card_notification_motion"
+                app:layout_constraintTop_toTopOf="@+id/image_view_card_notification_motion" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_lower_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/been"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_static_notifications_card_upper"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications_card_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_value_notifications_card_lower_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/detected"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_static_notifications_card_lower_left"
+                app:layout_constraintTop_toTopOf="@+id/text_view_static_notifications_card_lower_left" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_attention_motion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/attention_someone_was_walking"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_static_notifications_card_lower_left"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications_card_lower_left" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_attention_motion_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit"
+                android:text="@string/door_was"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_static_notifications_card_attention_motion"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications_card_attention_motion" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_value_notifications_card_attention_motion_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/closed"
+                android:textColor="@color/red"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_static_notifications_card_attention_motion_lower"
+                app:layout_constraintTop_toTopOf="@+id/text_view_static_notifications_card_attention_motion_lower" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardViewNotificationDoor"
+        android:layout_width="370dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@color/profile_color"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardViewNotificationMotion"
+        app:layout_constraintStart_toStartOf="@+id/materialCardViewNotificationMotion"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardViewNotificationMotion">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_view_card_notification_door"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:background="@drawable/icon_card_notification_door"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_door_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/activity_has"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/image_view_card_notification_door"
+                app:layout_constraintTop_toTopOf="@+id/image_view_card_notification_door" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_door_lower_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/been"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_static_notifications_card_door_upper"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications_card_door_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_value_notifications_card_door_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/detected"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_static_notifications_card_door_lower_left"
+                app:layout_constraintTop_toTopOf="@+id/text_view_static_notifications_card_door_lower_left" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_attention_door"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/attention_someone_tried_to"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_static_notifications_card_door_lower_left"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications_card_door_lower_left" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_value_notifications_card_attention_door_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/open"
+                android:textColor="@color/red"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_static_notifications_card_attention_door"
+                app:layout_constraintTop_toTopOf="@+id/text_view_static_notifications_card_attention_door" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_attention_door_lower_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/the_door"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_value_notifications_card_attention_door_lower"
+                app:layout_constraintTop_toTopOf="@+id/text_view_value_notifications_card_attention_door_lower" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardViewNotificationTemp"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@color/profile_color"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardViewNotificationDoor"
+        app:layout_constraintStart_toStartOf="@+id/materialCardViewNotificationDoor"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardViewNotificationDoor">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_view_card_notification_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/icon_card_notification_temp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_temp_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="45dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/reduce_the"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_card_notification_temp"
+                app:layout_constraintStart_toEndOf="@+id/image_view_card_notification_temp"
+                app:layout_constraintTop_toTopOf="@+id/image_view_card_notification_temp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_value_notifications_card_temp_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit_bold"
+                android:text="@string/temperature"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_static_notifications_card_temp_upper"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_static_notifications_card_temp_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_static_notifications_card_attention_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/attention_reduce_the_temperature_as_it_is_too"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="@+id/text_view_value_notifications_card_temp_upper"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_value_notifications_card_temp_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_value_notifications_card_attention_temp_lower_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/outfit"
+                android:text="@string/high"
+                android:textColor="@color/red"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_static_notifications_card_attention_temp"
+                app:layout_constraintTop_toTopOf="@+id/text_view_static_notifications_card_attention_temp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

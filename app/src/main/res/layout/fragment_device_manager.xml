@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purpleBackground"
+    tools:context=".ui.deviceManager.DeviceManagerFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewTemperatureSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/device_manager"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:fontFamily="@font/outfit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewInformationUpper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/information_and_management_upper"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:fontFamily="@font/outfit_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTemperatureSettings" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewInformationLower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/information_and_management_lower"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:fontFamily="@font/outfit_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInformationUpper" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_motion"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="@color/color_circle_temp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInformationLower">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_on_off_climate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/manrope_medium"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="@string/on"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_climate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:checked="true"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_card_view_motion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/icon_card_view_temp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_motion_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/climate"
+
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:fontFamily="@font/manrope_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_motion" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_value_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/test_code_3"
+                android:textColor="@color/blue_value"
+                android:textSize="12sp"
+                app:fontFamily="@font/manrope_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_motion_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_c_lower_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/climate_c"
+                android:textColor="@color/material_dynamic_neutral80"
+
+                android:textSize="12sp"
+                app:fontFamily="@font/manrope_medium"
+                app:layout_constraintStart_toEndOf="@+id/text_view_inside_cardView_value_lower"
+                app:layout_constraintTop_toTopOf="@+id/text_view_inside_cardView_value_lower" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_door"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="5dp"
+        app:cardBackgroundColor="@color/color_card_view_door"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toEndOf="@+id/card_view_motion"
+        app:layout_constraintTop_toTopOf="@+id/card_view_motion">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_on_off_door"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/manrope_medium"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="@string/on"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_door"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:checked="true"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_card_view_door"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/icon_card_view_door"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_door_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="45dp"
+                android:text="@string/door_is"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:fontFamily="@font/manrope_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_door" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_door_true_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/close"
+                android:textColor="@color/red"
+                android:textSize="17sp"
+                app:fontFamily="@font/manrope_semibold"
+                app:layout_constraintStart_toEndOf="@+id/text_view_inside_cardView_door_upper"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_door" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_door_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/door_sensor"
+                android:textColor="@color/material_dynamic_neutral80"
+
+                android:textSize="12sp"
+                app:fontFamily="@font/manrope_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_door_upper" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_temp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="@color/color_card_view_temp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="@+id/card_view_motion"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_motion" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_on_off_motion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/manrope_medium"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="@string/on"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_motion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:checked="true"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_card_view_foot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/icon_card_view_foot"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_foot_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/steps"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:fontFamily="@font/manrope_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_foot" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_foot_true_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/do_not_found"
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                app:fontFamily="@font/manrope_semibold"
+                app:layout_constraintStart_toEndOf="@+id/text_view_inside_cardView_foot_upper"
+                app:layout_constraintTop_toTopOf="@+id/text_view_inside_cardView_foot_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_temp_lower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/motion_sensor"
+                android:textColor="@color/material_dynamic_neutral_variant90"
+                android:fontFamily="@font/manrope_medium"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_foot_true_false" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_not_found_device"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        app:cardBackgroundColor="@color/blue_card_view"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="@+id/card_view_door"
+        app:layout_constraintTop_toTopOf="@+id/card_view_temp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <ImageView
+                android:id="@+id/icon_card_view_electricity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="43dp"
+                android:background="@drawable/icon_card_view_electrecity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_not_found_main_upper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/used_electricity"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+
+                app:fontFamily="@font/manrope_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_card_view_electricity" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_electricity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/manrope_medium"
+                android:text="@string/kwh_of"
+                android:textColor="@color/material_dynamic_neutral_variant90"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_inside_cardView_value_left_electricity"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_inside_cardView_not_found_main_upper" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_value_right_electricity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/manrope_medium"
+                android:text="@string/test_2_number_kwh"
+                android:textColor="@color/yellow"
+
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_inside_cardView_electricity"
+                app:layout_constraintTop_toTopOf="@+id/text_view_inside_cardView_electricity" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_kwh_electricity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/manrope_medium"
+                android:text="@string/kwh"
+                android:textColor="@color/material_dynamic_neutral_variant90"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/text_view_inside_cardView_value_right_electricity"
+                app:layout_constraintTop_toTopOf="@+id/text_view_inside_cardView_value_right_electricity" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_inside_cardView_value_left_electricity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:fontFamily="@font/manrope_medium"
+                android:text="@string/test_number_kwh"
+                android:textColor="@color/yellow"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_view_inside_cardView_electricity" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

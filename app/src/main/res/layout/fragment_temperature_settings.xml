@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purpleBackground"
+    tools:context=".ui.temperatureSettings.TemperatureSettingsFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewTemperatureSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fontFamily="@font/outfit"
+        android:text="@string/temperature_settings"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewModeTempSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/mode"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTemperatureSettings" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_segment_buttons"
+        android:drawableEnd="@drawable/hot_icon"
+        android:drawablePadding="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/hot"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewModeTempSettings"
+        app:layout_constraintTop_toBottomOf="@+id/textViewModeTempSettings" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:drawableEnd="@drawable/cold_icon"
+        android:textColor="@color/white"
+        android:drawablePadding="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/custom_segment_buttons"
+        android:text="@string/cold"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/btnHot"
+        app:layout_constraintTop_toTopOf="@+id/btnHot" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/custom_segment_buttons"
+        android:drawableEnd="@drawable/normal_icon"
+        android:drawablePadding="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/normal"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/btnCold"
+        app:layout_constraintTop_toTopOf="@+id/btnCold" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderTempSettings"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/slider_gradient"
+        android:stepSize="1.0"
+        android:valueFrom="-5"
+        android:valueTo="35.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCold"
+        app:thumbColor="@color/white"
+        app:trackColor="#00FFFFFF"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/circle_temp_text"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/color_circle_temp"
+        app:cardCornerRadius="140dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sliderTempSettings">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_inside_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="90sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/text_inside_circle_symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="55dp"
+                android:background="@drawable/symbol_temp_inside_circle"
+                android:contentDescription="@string/text_inside_circle_symbol"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_inside_circle"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_below_circle_upper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_below_circle_upper"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle_temp_text" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_below_circle_lower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/text_below_circle_lower"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_below_circle_upper" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetTemp"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/set_the_temperature"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_below_circle_lower" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
