@@ -13,8 +13,12 @@ lifecycleViewmodelKtx = "2.8.7"
 navigationFragmentKtx = "2.8.5"
 navigationUiKtx = "2.8.5"
 retrofit = "2.11.0"
+ktorClientCore = "3.0.3"
 
 [libraries]
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCore" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientCore" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientCore" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
