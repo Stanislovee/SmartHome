@@ -1,22 +1,59 @@
 package com.example.smarthome
 
+import android.util.Log
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.android.Android
+import io.ktor.client.plugins.DefaultRequest
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.logging.LogLevel
+import io.ktor.client.plugins.logging.Logger
+import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.get
+import io.ktor.client.request.header
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.client.statement.HttpResponse
+import io.ktor.http.ContentType
+import io.ktor.http.URLProtocol
+import io.ktor.http.contentType
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 
 interface AuthRepository {
     suspend fun login(email: String, password: String): HttpResponse
-    suspend fun registerUser(email: String, password: String, name: String): User
+    suspend fun registerUser(email: String, password: String, name: String): HttpResponse
 }
 
 class AuthRepositoryImpl : AuthRepository {
-    private val client = HttpClient(Android)
+    private val client = HttpClient(Android) {
+        expectSuccess = true
+        install(ContentNegotiation) {
+            json(Json {
+                prettyPrint = true
+                isLenient = true
+                ignoreUnknownKeys = true
+            })
+        }
+        install(Logging) {
+            logger = object : Logger {
+                override fun log(message: String) {
+                    Log.d("", message)
+                }
+            }
+            level = LogLevel.ALL
+        }
+        install(DefaultRequest) {
+            url {
+                protocol = URLProtocol.HTTP
+                contentType(ContentType.Application.Json)
+            }
+
+        }
+    }
 
     override suspend fun login(email: String, password: String): HttpResponse {
         return withContext(Dispatchers.IO) {
@@ -24,16 +61,17 @@ class AuthRepositoryImpl : AuthRepository {
         }
     }
 
-    override suspend fun registerUser(email: String, password: String, name: String): User {
+    override suspend fun registerUser(email: String, password: String, name: String): HttpResponse {
         return withContext(Dispatchers.IO) {
             client.post(urlString = "http://apibratvateem.infy.uk/register.php",
                 block = {
-//                    setBody()
-                }).body()
+                    setBody(User(email, password, name))
+                })
         }
     }
 }
 
+@Serializable
 data class User(val email: String, val password: String, val name: String)
 
 

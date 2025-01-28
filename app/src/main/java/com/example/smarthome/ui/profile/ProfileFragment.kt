@@ -45,7 +45,7 @@ class ProfileFragment : Fragment() {
 
     private fun makeTestRequestToServer() {
         lifecycleScope.launch {
-            val response = authRepository.login("email", "pass")
+            val response = authRepository.registerUser("email", "pass", "name")
             Toast.makeText(
                 requireActivity(),
                 "response received${response.status}",
