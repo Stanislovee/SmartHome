@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     kotlin("plugin.serialization") version "2.1.10"
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -61,4 +62,10 @@ dependencies {
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.cio)
     implementation(libs.ktor.client.android)
+
+    implementation(libs.firebase.auth)
+//    implementation(libs.firebase.analytics)
+//    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.ui.auth)
+    implementation(libs.playservices.coroutines)
 }

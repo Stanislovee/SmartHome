@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "79283461348",
+    "project_id": "smarthome-5d99c",
+    "storage_bucket": "smarthome-5d99c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79283461348:android:d9622a2692234e374fa0f1",
+        "android_client_info": {
+          "package_name": "com.example.smarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79283461348-u42br6shlu4trp0dr8410arnnv2btbe9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smarthome",
+            "certificate_hash": "d0a340b1c3fe61b9f04bbd57e687c6e1516f6370"
+          }
+        },
+        {
+          "client_id": "79283461348-0dnkg2nrjvheh2hp3fapilq5dc70hs64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwdi5Qc5APxtQW0nk-Wdcyxm_mQGM6KLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79283461348-0dnkg2nrjvheh2hp3fapilq5dc70hs64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
